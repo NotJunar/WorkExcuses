@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Excuses</title>
+    <style>
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #0f172a;  /* Slate 900 */
+            color: #f1f5f9;  /* Slate 100 */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 36rem;
+            padding: 2rem;
+            background-color: #1e293b;  /* Slate 800 */
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-2px);
+        }
+
+        .excuse {
+            font-size: clamp(1.25rem, 3vw, 1.875rem);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -0.025em;
+        }
+
+        .reload {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            background-color: #10b981;  /* Emerald 500 */
+            color: #ffffff;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            letter-spacing: 0.025em;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .reload:hover {
+            background-color: #059669;  /* Emerald 600 */
+            transform: translateY(-1px);
+            box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        .reload:active {
+            transform: translateY(0);
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #f8fafc;  /* Slate 50 */
+                color: #0f172a;  /* Slate 900 */
+            }
+            
+            .container {
+                background-color: #ffffff;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="excuse" id="excuse">Loading your next excuse...</div>
+        <button class="reload" onclick="location.reload()">Give Me Another Excuse</button>
+    </div>
+    <script>
+        const excuses = [
+            "I didn’t get the email, must’ve gone to spam.",
+            "The power went out and my laptop battery died.",
+            "I was stuck in back-to-back meetings all day.",
+            "I thought the deadline was tomorrow, not today!",
+            "The file got corrupted and I had to start over.",
+            "My internet provider is throttling me, couldn’t upload.",
+            "I was debugging another issue that seemed critical.",
+            "The client changed the requirements last minute.",
+            "I couldn’t access the system, it was down all morning.",
+            "I misunderstood the task, but I’m on it now!",
+            "My coworker told me they were handling it.",
+            "I had a family emergency and couldn’t focus.",
+            "I was waiting for approvals before proceeding.",
+            "The software license expired and IT hasn’t fixed it yet.",
+            "I thought you wanted this prioritized for next week.",
+            "I needed clarification on the task and didn’t get a response.",
+            "The system crashed while I was uploading the files.",
+            "I was working on it late, but I fell asleep mid-task.",
+            "The report generator tool wasn’t working for me.",
+            "I ran out of coffee and couldn’t function.",
+            "My keyboard stopped working halfway through.",
+            "The VPN kept disconnecting me from the server.",
+            "I needed to verify data, but the source was unavailable.",
+            "The testing environment was down, couldn’t proceed.",
+            "I misunderstood the priority order, my bad!",
+            "I thought another team was taking care of that.",
+            "My dog accidentally turned off my computer.",
+            "I had to troubleshoot an unrelated urgent issue.",
+            "The task got buried under other high-priority items.",
+            "I couldn’t access the document because of permission issues.",
+            "I was waiting on feedback before continuing.",
+            "My toddler spilled juice on my laptop.",
+            "I was halfway done when I realized I was using the wrong template.",
+            "I sent the file, but it must not have gone through.",
+            "I hit save, but it seems the changes didn’t stick.",
+            "I forgot to cc myself in the email to track it.",
+            "The spreadsheet formula broke, had to redo everything.",
+            "I was helping a colleague with their urgent issue.",
+            "I needed to redo it because of a formatting problem.",
+            "The office printer ran out of ink and delayed the process.",
+            "I couldn’t find the data I needed to finish it.",
+            "The document got deleted accidentally while cleaning files.",
+            "The client’s feedback only came in this morning.",
+            "The new software update caused unexpected bugs.",
+            "I was double-checking everything to avoid mistakes.",
+            "I thought we had more time to finish this.",
+            "I wasn’t feeling well yesterday, so I fell behind.",
+            "My project management tool wasn’t syncing updates.",
+            "I didn’t have the right credentials to access the files.",
+            "The changes I made weren’t saved properly.",
+            "The internet was out in my area all morning.",
+            "I was multitasking and lost track of time.",
+            "The file didn’t save properly before I closed it.",
+            "The collaboration tool wasn’t working as expected.",
+            "I couldn’t find the original requirements document." 
+        ];
+
+        const randomExcuse = excuses[Math.floor(Math.random() * excuses.length)];
+        document.getElementById("excuse").textContent = randomExcuse;
+    </script>
+</body>
+</html>
